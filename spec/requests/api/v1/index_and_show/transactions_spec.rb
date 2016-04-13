@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "GET /api/v1/transactions" do
+RSpec.describe "get transactions index and show" do
   it "returns a list of all transactions" do
     create_transactions
 

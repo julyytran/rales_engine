@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "GET /api/v1/items" do
+RSpec.describe "get items index and show" do
   it "returns a list of all items" do
     create_items
 

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "GET /api/v1/invoices" do
+RSpec.describe "get invoices index and show" do
   it "returns a list of all invoices" do
     create_invoices
 

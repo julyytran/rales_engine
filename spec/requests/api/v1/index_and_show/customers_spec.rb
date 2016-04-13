@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "GET /api/v1/customers" do
+RSpec.describe "get customers index and show" do
   it "returns a list of all customers" do
     create_customers
 
