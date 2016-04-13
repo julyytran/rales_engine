@@ -18,6 +18,10 @@ module Api
       def find_all
         respond_with Merchant.where(merchant_params)
       end
+
+      def random
+        respond_with Merchant.order("RANDOM()").first
+      end
       
       private
 
