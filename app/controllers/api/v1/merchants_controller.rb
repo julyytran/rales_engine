@@ -20,8 +20,9 @@ module Api
       end
 
       def random
-        respond_with Merchant.
+        respond_with Merchant.order("RANDOM()").first
       end
+      
       private
 
       def merchant_params
