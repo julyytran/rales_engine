@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "GET /api/v1/merchants" do
+RSpec.describe "get merchants index and show" do
   it "returns a list of all merchants" do
     create_merchants
 
@@ -13,7 +13,9 @@ RSpec.describe "GET /api/v1/merchants" do
 
     expect(merchant).to eq ({
       "id" => 1,
-      "name" => "July's awesome goods"
+      "name" => "July's awesome goods",
+      "created_at"=> merchant["created_at"],
+      "updated_at"=> merchant["updated_at"]
       })
   end
 
@@ -28,7 +30,9 @@ RSpec.describe "GET /api/v1/merchants" do
 
     expect(merchant).to eq ({
       "id" => 2,
-      "name" => "July's dope goods"
+      "name" => "July's dope goods",
+      "created_at"=> merchant["created_at"],
+      "updated_at"=> merchant["updated_at"]
       })
   end
 end

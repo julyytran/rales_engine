@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "GET /api/v1/items" do
+RSpec.describe "get items index and show" do
   it "returns a list of all items" do
     create_items
 
@@ -16,7 +16,9 @@ RSpec.describe "GET /api/v1/items" do
       "name" => "Cool item",
       "description" => "so cool",
       "unit_price" => "10.00",
-      "merchant_id" => 1
+      "merchant_id" => 1,
+      "created_at"=> item["created_at"],
+      "updated_at"=> item["updated_at"]
       })
   end
 
@@ -34,7 +36,9 @@ RSpec.describe "GET /api/v1/items" do
       "name" => "Dope item",
       "description" => "so dope",
       "unit_price" => "10.00",
-      "merchant_id" => 2
+      "merchant_id" => 2,
+      "created_at"=> item["created_at"],
+      "updated_at"=> item["updated_at"]
       })
   end
 end

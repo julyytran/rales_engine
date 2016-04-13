@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "GET /api/v1/customers" do
+RSpec.describe "get customers index and show" do
   it "returns a list of all customers" do
     create_customers
 
@@ -15,6 +15,8 @@ RSpec.describe "GET /api/v1/customers" do
       "id" => 1,
       "first_name" => "July",
       "last_name" => "Cool",
+      "created_at"=> customer["created_at"],
+      "updated_at"=> customer["updated_at"]
       })
   end
 
@@ -31,6 +33,8 @@ RSpec.describe "GET /api/v1/customers" do
       "id" => 2,
       "first_name" => "July",
       "last_name" => "Dope",
+      "created_at"=> customer["created_at"],
+      "updated_at"=> customer["updated_at"]
       })
   end
 end

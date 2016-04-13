@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "GET /api/v1/transactions" do
+RSpec.describe "get transactions index and show" do
   it "returns a list of all transactions" do
     create_transactions
 
@@ -15,7 +15,9 @@ RSpec.describe "GET /api/v1/transactions" do
       "id" => 1,
       "invoice_id" => 1,
       "credit_card_number" => "4654405418249632",
-      "result" => "success"
+      "result" => "success",
+      "created_at"=> transaction["created_at"],
+      "updated_at"=> transaction["updated_at"]
       })
   end
 
@@ -32,7 +34,9 @@ RSpec.describe "GET /api/v1/transactions" do
       "id" => 2,
       "invoice_id" => 2,
       "credit_card_number" => "4654405418249631",
-      "result" => "success"
+      "result" => "success",
+      "created_at"=> transaction["created_at"],
+      "updated_at"=> transaction["updated_at"]
       })
   end
 end

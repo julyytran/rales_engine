@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "GET /api/v1/invoices" do
+RSpec.describe "get invoices index and show" do
   it "returns a list of all invoices" do
     create_invoices
 
@@ -15,7 +15,9 @@ RSpec.describe "GET /api/v1/invoices" do
       "id" => 1,
       "customer_id" => 1,
       "merchant_id" => 1,
-      "status" => "pending"
+      "status" => "pending",
+      "created_at"=> invoice["created_at"],
+      "updated_at"=> invoice["updated_at"]
       })
   end
 
@@ -32,7 +34,9 @@ RSpec.describe "GET /api/v1/invoices" do
       "id" => 2,
       "customer_id" => 2,
       "merchant_id" => 2,
-      "status" => "pending"
+      "status" => "pending",
+      "created_at"=> invoice["created_at"],
+      "updated_at"=> invoice["updated_at"]
       })
   end
 end
