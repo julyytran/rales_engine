@@ -3,11 +3,9 @@ class CreateInvoices < ActiveRecord::Migration
     enable_extension 'citext'
 
     create_table :invoices do |t|
-      t.integer :customer_id
-      t.integer :merchant_id
+      t.references :customer, index: true, foreign_key: true
+      t.references :merchant, index: true, foreign_key: true
       t.citext :status
-      t.citext :created_at
-      t.citext :updated_at
 
       t.timestamps null: false
     end

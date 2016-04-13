@@ -19,6 +19,14 @@ module Api
         respond_with Customer.where(customer_params)
       end
 
+      def invoices
+        respond_with Invoice.where(customer_id: params[:id])
+      end
+
+      def transactions
+        respond_with Transaction.where(customer_id: params[:id])
+      end
+
       private
 
       def customer_params
