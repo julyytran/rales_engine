@@ -4,10 +4,4 @@ class InvoiceItem < ActiveRecord::Base
   validates :invoice_id, presence: true
   validates :quantity, presence: true
   validates :unit_price, presence: true
-
-  before_save :format_price
-
-  def format_price
-    self.unit_price = sprintf('%.2f', (unit_price.to_i/100.0))
-  end
 end
