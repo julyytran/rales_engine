@@ -15,6 +15,8 @@ RSpec.describe "get customers index and show" do
       "id" => 1,
       "first_name" => "July",
       "last_name" => "Cool",
+      "created_at"=> customer["created_at"],
+      "updated_at"=> customer["updated_at"]
       })
   end
 
@@ -31,6 +33,8 @@ RSpec.describe "get customers index and show" do
       "id" => 2,
       "first_name" => "July",
       "last_name" => "Dope",
+      "created_at"=> customer["created_at"],
+      "updated_at"=> customer["updated_at"]
       })
   end
 end
