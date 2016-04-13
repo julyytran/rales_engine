@@ -5,6 +5,7 @@ Rails.application.routes.draw do
           collection do
             get "/find", to: "merchants#find"
             get "/find_all", to: "merchants#find_all"
+            get "/random", to: "merchants#random"
           end
         end
 
