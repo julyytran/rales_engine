@@ -19,6 +19,16 @@ module Api
         respond_with Item.where(item_params)
       end
 
+      def invoice_items
+        item = Item.find(params[:id])
+        respond_with item.invoice_items
+      end
+
+      def merchant
+        item = Item.find(params[:id])
+        respond_with item.merchant
+      end
+
       private
 
       def item_params

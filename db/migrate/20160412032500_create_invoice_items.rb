@@ -3,12 +3,10 @@ class CreateInvoiceItems < ActiveRecord::Migration
     enable_extension 'citext'
 
     create_table :invoice_items do |t|
-      t.integer :item_id
-      t.integer :invoice_id
+      t.references :item, index: true, foreign_key: true
+      t.references :invoice, index: true, foreign_key: true
       t.integer :quantity
-      t.citext :unit_price
-      t.citext :created_at
-      t.citext :updated_at
+      t.string :unit_price
 
       t.timestamps null: false
     end

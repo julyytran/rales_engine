@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe "get transactions index and show" do
   it "returns a list of all transactions" do
-    create_transactions
+    create_test_data
 
     get "/api/v1/transactions"
 
@@ -22,7 +22,7 @@ RSpec.describe "get transactions index and show" do
   end
 
   it "returns a show of one transaction" do
-    create_transactions
+    create_test_data
 
     get "/api/v1/transactions/2"
 

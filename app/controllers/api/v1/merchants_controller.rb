@@ -22,6 +22,14 @@ module Api
       def random
         respond_with Merchant.order("RANDOM()").first
       end
+
+      def items
+        respond_with Item.where(merchant_id: params[:id])
+      end
+
+      def invoices
+        respond_with Invoice.where(merchant_id: params[:id])
+      end
       
       private
 

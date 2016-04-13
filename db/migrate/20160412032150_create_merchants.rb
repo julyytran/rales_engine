@@ -4,8 +4,6 @@ class CreateMerchants < ActiveRecord::Migration
 
     create_table :merchants do |t|
       t.citext :name
-      t.citext :created_at
-      t.citext :updated_at
 
       t.timestamps null: false
     end

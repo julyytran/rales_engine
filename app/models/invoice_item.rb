@@ -5,6 +5,9 @@ class InvoiceItem < ActiveRecord::Base
   validates :quantity, presence: true
   validates :unit_price, presence: true
 
+  belongs_to :invoice
+  belongs_to :item
+
   before_create :format_price
 
   def format_price

@@ -7,10 +7,10 @@ namespace :import do
 
     data = [
       {model: Customer, file_path: './vendor/assets/data/customers.csv'},
-      {model: InvoiceItem, file_path: './vendor/assets/data/invoice_items.csv'},
-      {model: Invoice, file_path: './vendor/assets/data/invoices.csv'},
+      {model: Merchant, file_path: './vendor/assets/data/merchants.csv'},
       {model: Item, file_path: './vendor/assets/data/items.csv'},
-      {model: Merchant, file_path: './vendor/assets/data/merchants.csv'}
+      {model: Invoice, file_path: './vendor/assets/data/invoices.csv'},
+      {model: InvoiceItem, file_path: './vendor/assets/data/invoice_items.csv'}
     ]
 
     data.each do |datum|

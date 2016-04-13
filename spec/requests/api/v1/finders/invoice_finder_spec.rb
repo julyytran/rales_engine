@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe "get invoices find and find all" do
   it "can find one invoice by id" do
-    create_invoices
+    create_test_data
 
     get "/api/v1/invoices/find?id=2"
 
@@ -21,7 +21,7 @@ RSpec.describe "get invoices find and find all" do
   end
 
   it "can find all invoices by status" do
-    create_invoices
+    create_test_data
 
     get "/api/v1/invoices/find_all?stauts=pending"
 

@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe "get items find and find all" do
   it "can find one item by id" do
-    create_items
+    create_test_data
 
     get "/api/v1/items/find?id=2"
 
@@ -22,7 +22,7 @@ RSpec.describe "get items find and find all" do
   end
 
   it "can find all items by name" do
-    create_items
+    create_test_data
 
     get "/api/v1/items/find_all?name=cool item"
 
