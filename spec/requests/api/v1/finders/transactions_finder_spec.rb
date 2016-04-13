@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe "get transactions find and find all" do
   it "can find one transaction by id" do
-    create_transactions
+    create_test_data
 
     get "/api/v1/transactions/find?id=2"
 
@@ -21,7 +21,7 @@ RSpec.describe "get transactions find and find all" do
   end
 
   it "can find all transactions by result" do
-    create_transactions
+    create_test_data
 
     get "/api/v1/transactions/find_all?result=success"
 

@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe "get items index and show" do
   it "returns a list of all items" do
-    create_items
+    create_test_data
 
     get "/api/v1/items"
 
@@ -23,7 +23,7 @@ RSpec.describe "get items index and show" do
   end
 
   it "returns a show of one item" do
-    create_items
+    create_test_data
 
     get "/api/v1/items/2"
 

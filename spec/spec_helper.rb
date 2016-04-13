@@ -3,6 +3,15 @@ module ApiHelpers
     JSON.parse(response.body)
   end
 
+  def create_test_data
+    create_merchants
+    create_customers
+    create_items
+    create_invoices
+    create_invoice_items
+    create_transactions
+  end
+
   def create_merchants
     Merchant.create(id: 1, name: "July's awesome goods")
     Merchant.create(id: 2, name: "July's dope goods")

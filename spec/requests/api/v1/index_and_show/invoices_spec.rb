@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe "get invoices index and show" do
   it "returns a list of all invoices" do
-    create_invoices
+    create_test_data
 
     get "/api/v1/invoices"
 
@@ -22,7 +22,7 @@ RSpec.describe "get invoices index and show" do
   end
 
   it "returns a show of one invoice" do
-    create_invoices
+    create_test_data
 
     get "/api/v1/invoices/2"
 
