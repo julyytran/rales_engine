@@ -19,6 +19,31 @@ module Api
         respond_with Invoice.where(invoice_params)
       end
 
+      def transactions
+        invoice = Invoice.find(params[:id])
+        respond_with invoice.transactions
+      end
+
+      def invoice_items
+        invoice = Invoice.find(params[:id])
+        respond_with invoice.invoice_items
+      end
+
+      def items
+        invoice = Invoice.find(params[:id])
+        respond_with invoice.items
+      end
+
+      def customer
+        invoice = Invoice.find(params[:id])
+        respond_with invoice.customer
+      end
+
+      def merchant
+        invoice = Invoice.find(params[:id])
+        respond_with invoice.merchant
+      end
+
       private
 
       def invoice_params

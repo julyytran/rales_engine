@@ -19,8 +19,9 @@ module Api
         respond_with Transaction.where(transaction_params)
       end
 
-      def invoices
-        respond_with Invoice.where(transaction)
+      def invoice
+        transaction = Transaction.find(params[:id])
+        respond_with transaction.invoice
       end
 
       private
