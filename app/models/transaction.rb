@@ -5,4 +5,8 @@ class Transaction < ActiveRecord::Base
   validates :result, presence: true
 
   belongs_to :invoice
+
+  def self.successful
+    self.where(result: "success")
+  end
 end

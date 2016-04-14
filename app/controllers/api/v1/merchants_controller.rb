@@ -30,7 +30,12 @@ module Api
       def invoices
         respond_with Invoice.where(merchant_id: params[:id])
       end
-      
+
+      def favorite_customer
+        merchant = Merchant.find(params[:id])
+        binding.pry
+      end
+
       private
 
       def merchant_params
