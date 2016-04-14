@@ -45,9 +45,10 @@ module Api
       end
 
       def revenue
-
+        merchant = Merchant.find(params[:id])
+        respond_with merchant.revenue
       end
-      
+
       private
 
       def merchant_params
