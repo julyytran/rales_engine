@@ -6,14 +6,14 @@ Rails.application.routes.draw do
             get "/find", to: "merchants#find"
             get "/find_all", to: "merchants#find_all"
             get "/random", to: "merchants#random"
-            get "/revenue", to: "merchants#all_revenue"
+            get "/revenue", to: "merchants_analytics#all_revenue"
           end
           member do
             get "/items", to: "merchants#items"
             get "/invoices", to: "merchants#invoices"
-            get "/favorite_customer", to: "merchants#favorite_customer"
-            get "/customers_with_pending_invoices", to: "merchants#customers_with_pending_invoices"
-            get "/revenue", to: "merchants#revenue"
+            get "/favorite_customer", to: "merchants_analytics#favorite_customer"
+            get "/customers_with_pending_invoices", to: "merchants_analytics#customers_with_pending_invoices"
+            get "/revenue", to: "merchants_analytics#revenue"
           end
         end
 
@@ -36,7 +36,7 @@ Rails.application.routes.draw do
           member do
             get "/invoices", to: "customers#invoices"
             get "/transactions", to: "customers#transactions"
-            get "/favorite_merchant", to: "customers#favorite_merchant"
+            get "/favorite_merchant", to: "customers_analytics#favorite_merchant"
           end
         end
 
