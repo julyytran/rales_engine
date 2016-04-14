@@ -33,7 +33,8 @@ module Api
 
       def favorite_customer
         merchant = Merchant.find(params[:id])
-        binding.pry
+        fav_customer_id = merchant.invoices.joins(:transactions).where(transactions: {result: "success"}).group(:customer_id).order(count: :desc).count.keys.first
+        respond_with Customer.find(fav_customer_id)
       end
 
       private
