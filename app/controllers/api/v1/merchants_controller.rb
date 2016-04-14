@@ -49,6 +49,10 @@ module Api
         respond_with merchant.revenue(params[:date])
       end
 
+      def all_revenue
+        respond_with Merchant.all_revenue(params[:date])
+      end
+
       private
 
       def merchant_params
