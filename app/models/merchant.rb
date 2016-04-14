@@ -4,4 +4,36 @@ class Merchant < ActiveRecord::Base
 
   has_many :items
   has_many :invoices
+
+  def revenue(date = nil)
+    if date
+      successful_invoices = self.invoices.successful.where(updated_at: date)
+      calculate_revenue(successful_invoices)
+    else
+      successful_invoices = self.invoices.successful
+      calculate_revenue(successful_invoices)
+    end
+  end
+
+  def self.all_revenue(date)
+    successful_invoices = Invoice.successful.where(updated_at: date)
+
+    invoice_items = successful_invoices.map { |invoice| invoice.invoice_items }.flatten
+
+    subtotals = invoice_items.map { |item| item.quantity * item.unit_price.to_f  }
+    revenue = subtotals.reduce(:+)
+
+    {"total_revenue" => sprintf("%.2f", revenue)}
+  end
+
+  private
+
+  def calculate_revenue(successful_invoices)
+    invoice_items = successful_invoices.map { |invoice| invoice.invoice_items }.flatten
+
+    subtotals = invoice_items.map { |item| item.quantity * item.unit_price.to_f  }
+    revenue = subtotals.reduce(:+)
+
+    {"revenue" => sprintf("%.2f", revenue)}
+  end
 end

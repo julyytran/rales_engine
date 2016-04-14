@@ -29,6 +29,12 @@ module Api
         respond_with customer.transactions
       end
 
+      def favorite_merchant
+        customer = Customer.find(params[:id])
+        fav_merch_id = customer.transactions.successful.group(:merchant_id).order(count: :desc).count.keys.first
+        respond_with Merchant.find(fav_merch_id)
+      end
+      
       private
 
       def customer_params
