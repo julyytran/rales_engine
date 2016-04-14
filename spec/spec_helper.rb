@@ -1,4 +1,4 @@
-module ApiHelpers
+module Helpers
   def json_body
     JSON.parse(response.body)
   end
@@ -31,9 +31,9 @@ module ApiHelpers
   end
 
   def create_invoices
-    Invoice.create(id: 1, customer_id: 1, merchant_id: 1, status: "pending")
-    Invoice.create(id: 2, customer_id: 2, merchant_id: 2, status: "pending")
-    Invoice.create(id: 3, customer_id: 3, merchant_id: 3, status: "pending")
+    Invoice.create(id: 1, customer_id: 1, merchant_id: 1, status: "pending", updated_at: "2012-03-16 11:55:05")
+    Invoice.create(id: 2, customer_id: 2, merchant_id: 2, status: "pending", updated_at: "2012-03-16 11:55:05")
+    Invoice.create(id: 3, customer_id: 3, merchant_id: 3, status: "shipped", updated_at: "2012-03-16 11:55:05")
   end
 
   def create_invoice_items
@@ -45,7 +45,7 @@ module ApiHelpers
   def create_transactions
     Transaction.create(id: 1, invoice_id: 1, credit_card_number: "4654405418249632", result: "success")
     Transaction.create(id: 2, invoice_id: 2, credit_card_number: "4654405418249631", result: "success")
-    Transaction.create(id: 3, invoice_id: 3, credit_card_number: "4654405418249630", result: "success")
+    Transaction.create(id: 3, invoice_id: 3, credit_card_number: "4654405418249630", result: "failed")
   end
 end
 

@@ -17,15 +17,13 @@ class Merchant < ActiveRecord::Base
 
   def self.all_revenue(date)
     successful_invoices = Invoice.successful.where(updated_at: date)
-    # binding.pry
+
     invoice_items = successful_invoices.map { |invoice| invoice.invoice_items }.flatten
 
     subtotals = invoice_items.map { |item| item.quantity * item.unit_price.to_f  }
     revenue = subtotals.reduce(:+)
 
     {"total_revenue" => sprintf("%.2f", revenue)}
-
-    # calculate_revenue(successful_invoices)
   end
 
   private
