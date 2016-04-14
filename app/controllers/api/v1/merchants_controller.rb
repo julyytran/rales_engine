@@ -37,6 +37,17 @@ module Api
         respond_with Customer.find(fav_customer_id)
       end
 
+      def customers_with_pending_invoices
+        merchant = Merchant.find(params[:id])
+        pending_cust_ids = merchant.invoices.pending.distinct.pluck(:customer_id)
+        pending_customers = pending_cust_ids.map { |id| Customer.find(id) }
+        respond_with pending_customers
+      end
+
+      def revenue
+
+      end
+      
       private
 
       def merchant_params

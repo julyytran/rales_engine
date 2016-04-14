@@ -4,4 +4,8 @@ class Merchant < ActiveRecord::Base
 
   has_many :items
   has_many :invoices
+
+  def revenue
+    
+  end
 end
