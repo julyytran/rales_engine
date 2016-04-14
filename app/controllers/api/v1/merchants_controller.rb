@@ -46,7 +46,7 @@ module Api
 
       def revenue
         merchant = Merchant.find(params[:id])
-        respond_with merchant.revenue
+        respond_with merchant.revenue(params[:date])
       end
 
       private
